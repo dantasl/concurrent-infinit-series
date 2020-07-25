@@ -12,7 +12,7 @@ public class ThreadPoolMain {
         List<Future<Double>> results =
                 new ArrayList<Future<Double>>();
 
-        for (int i = 1; i < N; i++) {
+        for (int i = 0; i < N; i++) {
             Callable<Double> task = new Task(i);
             Future<Double> result = executor.submit(task);
             results.add(result);
