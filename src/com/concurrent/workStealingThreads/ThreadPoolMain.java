@@ -19,15 +19,19 @@ public class ThreadPoolMain {
         }
 
         int i = 0;
+        double infinitySeriesSum = 0;
         try {
             for (Future<Double> result : results) {
                 System.out.print("Term of " + i++ + ": ");
                 System.out.print(result.get() + "\n");
+
+                infinitySeriesSum += result.get();
             }
         } catch (ExecutionException | InterruptedException e) {
             e.printStackTrace();
         } finally {
             executor.shutdown();
+            System.out.println("The series sum value is: " + infinitySeriesSum);
         }
     }
 }
