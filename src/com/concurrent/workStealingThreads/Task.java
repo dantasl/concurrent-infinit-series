@@ -17,7 +17,7 @@ public class Task implements Callable<Double> {
     }
 
     private double infinitSeriesTermCalculator(int term){
-        return factorial(term);
+        return 1.0 / factorial(term);
     }
 
     private int factorial(int n) {
