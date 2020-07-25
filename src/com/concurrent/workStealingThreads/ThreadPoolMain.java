@@ -12,7 +12,7 @@ public class ThreadPoolMain {
         List<Future<Double>> results =
                 new ArrayList<Future<Double>>();
 
-        for (int i = 0; i < 2; i++) {
+        for (int i = 1; i < N; i++) {
             Callable<Double> task = new Task(i);
             Future<Double> result = executor.submit(task);
             results.add(result);
@@ -23,7 +23,6 @@ public class ThreadPoolMain {
             for (Future<Double> result : results) {
                 System.out.print("Term of " + i++ + ": ");
                 System.out.print(result.get() + "\n");
-                i++;
             }
         } catch (ExecutionException | InterruptedException e) {
             e.printStackTrace();

@@ -13,11 +13,11 @@ public class Task implements Callable<Double> {
 
     @Override
     public Double call() throws Exception {
-        return this.infinitySeriesTermCalculator(this.term);
+        return this.infinitSeriesTermCalculator(this.term);
     }
 
-    private double infinitySeriesTermCalculator(int term){
-        return 1.0 / factorial(term);
+    private double infinitSeriesTermCalculator(int term){
+        return factorial(term);
     }
 
     private int factorial(int n) {
