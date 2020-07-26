@@ -1,4 +1,4 @@
-package com.concurrent.fixedThreads;
+package com.concurrent;
 
 import java.util.concurrent.Callable;
 
