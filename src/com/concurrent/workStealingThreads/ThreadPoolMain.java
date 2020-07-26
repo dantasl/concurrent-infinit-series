@@ -8,6 +8,8 @@ public class ThreadPoolMain {
     private static final int N = 10;
 
     public static void main(String[] args) {
+        long start = System.currentTimeMillis(); // starts time
+
         // Start stealing work pool
         ExecutorService executor = Executors.newWorkStealingPool();
         // creates a future list to sum the series after the threads execution
@@ -32,11 +34,15 @@ public class ThreadPoolMain {
 
                 infinitySeriesSum += result.get();
             }
+
+            System.out.println("ACTIVE THREAD: " + Thread.activeCount());
         } catch (ExecutionException | InterruptedException e) {
             e.printStackTrace();
         } finally {
             executor.shutdown();
             System.out.println("The series sum value is: " + infinitySeriesSum);
         }
+        long elapsedTime = System.currentTimeMillis() - start;
+        System.out.println("Executed in: " + elapsedTime/1000F); // elapsed time in seconds
     }
 }

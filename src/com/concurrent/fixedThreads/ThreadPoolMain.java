@@ -12,7 +12,8 @@ public class ThreadPoolMain {
 	private static final int NUM_THREADS = 4;
 	
 	public static void main(String[] args) {
-		int seriesLength = getSeriesLength(args);
+		int seriesLength = 30;
+		long start = System.currentTimeMillis(); // starts time
 		
 		ThreadPoolExecutor executor =
 				(ThreadPoolExecutor) Executors.newFixedThreadPool(NUM_THREADS);
@@ -29,6 +30,9 @@ public class ThreadPoolMain {
 		System.out.println("The series sum result is: " + result);
 		
 		executor.shutdown();
+
+		long elapsedTime = System.currentTimeMillis() - start;
+		System.out.println("Executed in: " + elapsedTime/1000F); // elapsed time in seconds
 	}
 	
 	private static Double calculateSeriesSum(List<Future<Double>> terms) {
