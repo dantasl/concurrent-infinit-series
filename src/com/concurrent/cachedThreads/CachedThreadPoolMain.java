@@ -1,3 +1,7 @@
+/*
+ * @author Italo Epifânio
+ * @author Lucas Dantas
+ */
 package com.concurrent.cachedThreads;
 
 import com.concurrent.Helper;
@@ -7,7 +11,19 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.*;
 
-public class ThreadPoolMain {
+/**
+ * This class instantiates and handles with the implementation of cached threaded pool tasks.
+ */
+public class CachedThreadPoolMain {
+    
+    /**
+     * The main method.
+     * Retrieves, through helper methods, the user input regarding the series length.
+     * Instantiates the Executor services and the factorial tasks. At the end, outputs the
+     * final result. 
+     *
+     * @param args 	The series length.
+     */
     public static void main(String[] args) {	
 		int seriesLength = Helper.getSeriesLength(args);
     	

@@ -1,3 +1,8 @@
+/*
+ * @author Italo Epifânio
+ * @author Lucas Dantas
+ */
+
 package com.concurrent.workStealingThreads;
 
 import java.util.ArrayList;
@@ -7,7 +12,19 @@ import java.util.concurrent.*;
 import com.concurrent.Helper;
 import com.concurrent.Task;
 
-public class ThreadPoolMain {
+/**
+ * This class instantiates and handles with the implementation of work stealing pool tasks.
+ */
+public class WorkStealingThreadPoolMain {
+	
+	/**
+     * The main method.
+     * Retrieves, through helper methods, the user input regarding the series length.
+     * Instantiates the Executor services and the factorial tasks. At the end, outputs the
+     * final result. 
+     *
+     * @param args 	The series length.
+     */
 	public static void main(String[] args) {
     	int seriesLength = Helper.getSeriesLength(args);
     	
