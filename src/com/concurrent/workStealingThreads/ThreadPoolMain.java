@@ -16,7 +16,7 @@ public class ThreadPoolMain {
         List<Future<Double>> terms = new ArrayList<Future<Double>>();
 
 		for (int i = 0; i < seriesLength; i++) {
-			Callable<Double> factorialTask = new Task(String.valueOf(i), i);
+			Callable<Double> factorialTask = new Task(i);
 			Future<Double> term = executor.submit(factorialTask);
 			terms.add(term);
 		}

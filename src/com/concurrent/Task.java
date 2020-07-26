@@ -4,12 +4,9 @@ import java.util.concurrent.Callable;
 
 public class Task implements Callable<Double> {
 	private int term;
-	private String id;
 	
-	public Task(String id, int term) {
-		this.id = id;
+	public Task(int term) {
 		this.term = term;
-		System.out.println("Created: Task " + id);
 	}
 	
 	@Override
@@ -22,7 +19,7 @@ public class Task implements Callable<Double> {
 	}
 	
 	private int factorial(int n) {
-		System.out.println("Task " + id + " is calculating factorial of " + n);
+		System.out.println("Thread " + Thread.currentThread().getId() + " is calculating factorial of " + n);
 		
 		int res = 1;
 		for (int i = 2; i <= n; i++) {
